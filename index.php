@@ -27,14 +27,15 @@ $faqs = [
     [
         "domanda" => "Perché il mio account è associato a un paese?",
         "risposta" => [
-            "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
+            "ris" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
             "numeri" => [
                 "uno" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
-                "lettere" => [
-                    "letA" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
-                    "letB" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
-                ],
+
                 "due" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."
+            ],
+            "lettere" => [
+                "letA" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
+                "letB" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
             ],
 
             "sottoDomanda" => "Stabilire il paese associato al tuo account",
@@ -73,16 +74,41 @@ $faqs = [
 <body>
     <?php
     foreach ($faqs as $key => $faqIndex) { ?>
-        <h1>
+        <!-- domande -->
+        <h2>
             <?php echo $faqIndex["domanda"]; ?>
-        </h1>
-        <p>
-            <?php echo $faqIndex["risposta"]; ?>
-        </p>
+        </h2>
+        <!-- risposte -->
+        <!-- risposta 3 -->
+        <?php if (is_array($faqIndex["risposta"])) { ?>
+            <p><?php echo $faqIndex["risposta"]["ris"] ?></p>
+            <ol class="list">
+                <li><?php echo $faqIndex["risposta"]["numeri"]["uno"] ?>
+
+                    <ul>
+                        <li>
+                            <?php echo $faqIndex["risposta"]["lettere"]["letA"] ?>
+                        </li>
+                        <li>
+                            <?php echo $faqIndex["risposta"]["lettere"]["letB"] ?>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li><?php echo $faqIndex["risposta"]["numeri"]["due"] ?></li>
+            </ol>
+            <h3><?php echo $faqIndex["risposta"]["sottoDomanda"] ?></h3>
+            <p><?php echo $faqIndex["risposta"]["sottoRisposta"] ?></p>
+
+        <?php }
+        // altre risposte
+        else { ?>
+            <p><?php echo $faqIndex["risposta"] ?></p>
+        <?php } ?>
 
     <?php }
     ?>
-
 </body>
 
 </html>
