@@ -70,12 +70,15 @@ $faqs = [
 
 <body>
     <?php
-    foreach ($faqs as $key => $faqIndex) {
-        echo $key;
-        foreach ($faqIndex as $key => $faq) {
-            echo $faq["domanda"];
-        }
-    }
+    foreach ($faqs as $key => $faqIndex) { ?>
+        <h1>
+            <?php echo $faqIndex["domanda"]; ?>
+        </h1>
+        <p>
+            <?php echo $faqIndex["risposta"]; ?>
+        </p>
+
+    <?php }
     ?>
 
 </body>
