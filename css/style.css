@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 70%;
+  margin: auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: justify;
+}
+
+h2 {
+  margin-top: 3em;
+}
+
+h4 {
+  margin-top: 1em;
+}
+p {
+  margin-top: 1em;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}
+
+br {
+  margin-bottom: 5px;
+}
+a {
+  text-decoration: none;
+}
+li {
+  width: 90%;
+  margin: auto;
+}
