@@ -25,7 +25,7 @@ p {
 }
 
 br {
-  margin-bottom: 5px;
+  margin-bottom: 1em;
 }
 a {
   text-decoration: none;
@@ -33,4 +33,7 @@ a {
 li {
   width: 90%;
   margin: auto;
+  font-size: 0.9em;
+  margin-top: 1em;
+  line-height: 1.5em;
 }
